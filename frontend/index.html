@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEase - Car Rental Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Drive<span>Ease</span></a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="cars.html" class="nav-link">Cars</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="register.html" class="btn btn-primary">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find Your Perfect Ride</h1>
+            <p>Rent premium cars at affordable prices. Safe, reliable, and convenient.</p>
+            <a href="cars.html" class="btn btn-secondary btn-lg">Browse Cars</a>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Search Cars</h2>
+                    <form id="searchForm">
+                        <div class="grid grid-4">
+                            <div class="form-group">
+                                <label class="form-label">Pickup Location</label>
+                                <input type="text" class="form-control" id="pickupLocation" placeholder="Enter pickup location">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Pickup Date</label>
+                                <input type="date" class="form-control" id="pickupDate">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Return Date</label>
+                                <input type="date" class="form-control" id="returnDate">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Car Type</label>
+                                <select class="form-select" id="carType">
+                                    <option value="">All Types</option>
+                                    <option value="SUV">SUV</option>
+                                    <option value="SEDAN">Sedan</option>
+                                    <option value="HATCHBACK">Hatchback</option>
+                                    <option value="LUXURY">Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Search Cars</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Cars</h2>
+            <div class="grid grid-3" id="featuredCars">
+                <!-- Cars will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Why Choose DriveEase?</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">🚗 Wide Selection</h3>
+                        <p class="card-text">Choose from our extensive fleet of vehicles to suit your needs.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">💰 Best Prices</h3>
+                        <p class="card-text">Competitive pricing with no hidden fees. Get the best value for your money.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">🔒 Safe & Secure</h3>
+                        <p class="card-text">All our cars are regularly maintained and thoroughly cleaned.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About DriveEase</h3>
+                    <p>Your trusted partner for car rentals. We provide safe, reliable, and affordable car rental services.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="cars.html">Cars</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 +91 98765 43210</p>
+                    <p>📧 support@driveease.com</p>
+                    <p>📍 Mumbai, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

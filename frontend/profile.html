@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - DriveEase</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Drive<span>Ease</span></a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="cars.html" class="nav-link">Cars</a></li>
+                <li><a href="my-bookings.html" class="nav-link">My Bookings</a></li>
+                <li><a href="profile.html" class="nav-link active">Profile</a></li>
+                <li><a href="#" class="btn btn-danger" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">My Profile</h2>
+            <div id="alertContainer"></div>
+            
+            <div class="grid grid-2">
+                <!-- Profile View -->
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Profile Information</h2>
+                            <div id="profileInfo">
+                                <!-- Profile info will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Update Profile Form -->
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Update Profile</h2>
+                            <form id="updateProfileForm">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="mobileNumber" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Address</label>
+                                    <textarea class="form-control" id="address" rows="3"></textarea>
+                                </div>
+                                <div class="grid grid-2">
+                                    <div class="form-group">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">State</label>
+                                        <input type="text" class="form-control" id="state">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Postal Code</label>
+                                    <input type="text" class="form-control" id="postalCode">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password -->
+            <div class="card" style="margin-top: 2rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Change Password</h2>
+                    <form id="changePasswordForm">
+                        <div class="grid grid-3">
+                            <div class="form-group">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

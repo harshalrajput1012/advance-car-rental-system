@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - DriveEase Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="navbar admin-nav">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">Drive<span>Ease</span> Admin</a>
+            <ul class="navbar-nav">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="manage-cars.html" class="nav-link">Manage Cars</a></li>
+                <li><a href="manage-bookings.html" class="nav-link active">Manage Bookings</a></li>
+                <li><a href="manage-customers.html" class="nav-link">Manage Customers</a></li>
+                <li><a href="#" class="btn btn-danger" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Manage Bookings Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Manage Bookings</h2>
+            <div id="alertContainer"></div>
+            
+            <!-- Filter by Status -->
+            <div style="margin-bottom: 1rem;">
+                <button class="btn btn-primary" onclick="filterBookings('ALL')">All</button>
+                <button class="btn btn-outline" onclick="filterBookings('PENDING')">Pending</button>
+                <button class="btn btn-outline" onclick="filterBookings('CONFIRMED')">Confirmed</button>
+                <button class="btn btn-outline" onclick="filterBookings('CANCELLED')">Cancelled</button>
+                <button class="btn btn-outline" onclick="filterBookings('COMPLETED')">Completed</button>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="bookingsTable">
+                        <!-- Bookings table will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

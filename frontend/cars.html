@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cars - DriveEase</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Drive<span>Ease</span></a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="cars.html" class="nav-link active">Cars</a></li>
+                <li><a href="my-bookings.html" class="nav-link">My Bookings</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+                <li><a href="login.html" class="btn btn-primary">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search & Filter Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Search & Filter Cars</h2>
+                    <form id="filterForm">
+                        <div class="grid grid-4">
+                            <div class="form-group">
+                                <label class="form-label">Search</label>
+                                <input type="text" class="form-control" id="searchKeyword" placeholder="Search by brand or model">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Brand</label>
+                                <select class="form-select" id="brandFilter">
+                                    <option value="">All Brands</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Fuel Type</label>
+                                <select class="form-select" id="fuelTypeFilter">
+                                    <option value="">All Types</option>
+                                    <option value="PETROL">Petrol</option>
+                                    <option value="DIESEL">Diesel</option>
+                                    <option value="ELECTRIC">Electric</option>
+                                    <option value="HYBRID">Hybrid</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Transmission</label>
+                                <select class="form-select" id="transmissionFilter">
+                                    <option value="">All Types</option>
+                                    <option value="MANUAL">Manual</option>
+                                    <option value="AUTOMATIC">Automatic</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-3">
+                            <div class="form-group">
+                                <label class="form-label">Min Price (₹/day)</label>
+                                <input type="number" class="form-control" id="minPrice" placeholder="Min price">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Max Price (₹/day)</label>
+                                <input type="number" class="form-control" id="maxPrice" placeholder="Max price">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Seating Capacity</label>
+                                <select class="form-select" id="seatingFilter">
+                                    <option value="">Any</option>
+                                    <option value="4">4+ Seats</option>
+                                    <option value="5">5+ Seats</option>
+                                    <option value="7">7+ Seats</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Apply Filters</button>
+                        <button type="button" class="btn btn-outline" onclick="resetFilters()">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Listing -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Available Cars</h2>
+            <div id="alertContainer"></div>
+            <div class="grid grid-3" id="carsGrid">
+                <!-- Cars will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cars.js"></script>
+</body>
+</html>

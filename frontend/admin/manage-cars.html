@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Cars - DriveEase Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="navbar admin-nav">
+        <div class="container">
+            <a href="../index.html" class="navbar-brand">Drive<span>Ease</span> Admin</a>
+            <ul class="navbar-nav">
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="manage-cars.html" class="nav-link active">Manage Cars</a></li>
+                <li><a href="manage-bookings.html" class="nav-link">Manage Bookings</a></li>
+                <li><a href="manage-customers.html" class="nav-link">Manage Customers</a></li>
+                <li><a href="#" class="btn btn-danger" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Manage Cars Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Manage Cars</h2>
+            <div id="alertContainer"></div>
+            
+            <button class="btn btn-primary" style="margin-bottom: 1rem;" onclick="showAddCarModal()">+ Add New Car</button>
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="carsTable">
+                        <!-- Cars table will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add/Edit Car Modal -->
+    <div id="carModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Car</h2>
+                <button class="close-btn" onclick="closeCarModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="carForm">
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="carBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" id="carModel" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Year</label>
+                            <input type="number" class="form-control" id="carYear" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Color</label>
+                            <input type="text" class="form-control" id="carColor">
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">License Plate</label>
+                            <input type="text" class="form-control" id="licensePlate" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Price per Day (₹)</label>
+                            <input type="number" class="form-control" id="pricePerDay" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Fuel Type</label>
+                            <select class="form-select" id="fuelType" required>
+                                <option value="PETROL">Petrol</option>
+                                <option value="DIESEL">Diesel</option>
+                                <option value="ELECTRIC">Electric</option>
+                                <option value="HYBRID">Hybrid</option>
+                                <option value="CNG">CNG</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Transmission</label>
+                            <select class="form-select" id="transmission" required>
+                                <option value="MANUAL">Manual</option>
+                                <option value="AUTOMATIC">Automatic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Seating Capacity</label>
+                        <input type="number" class="form-control" id="seatingCapacity" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" id="carDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="imageUrl" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Availability</label>
+                        <select class="form-select" id="isAvailable">
+                            <option value="true">Available</option>
+                            <option value="false">Not Available</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Car</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
